@@ -5,5 +5,5 @@ urlpatterns = [
     url('^join/$', views.register),
     url('^login/$', views.LogIn),
     url('^logout/$', views.LogOut),
-
+    url('^profile/$', views.profile),
 ]

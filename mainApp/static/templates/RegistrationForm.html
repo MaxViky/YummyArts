@@ -6,16 +6,17 @@
    .blue {background: #1F75FE; }
    .index{color: White;}
   </style>
-<div class="container" style=" margin-top: 70px; font-family=Verdana;">
-    <H2 class="text-center"><font color="White" >Registration</font></H2>
-    <form class="index" action="" method="POST" style="margin-left: 380px;">
+<div class="container" style="margin-top: 50px; font-family=Verdana;">
+    <H2 class="text-center"><font color="#1F75FE" >Registration</font></H2>
+    <div class="container" align="center" style="margin-left: 50px">
+    <form style="color:#1F75FE" action="" method="POST">
         {% csrf_token %}
     <table class="">
         {{ reg_form.as_table }}
     </table>
-        <input  style="margin-left: 230px; margin-top:10px;"  type="submit" class="btn purple btn-md index" value="Join us!" name="regbut">
+        <input style="margin-top:10px;"  type="submit" class="btn blue btn-md index" value="Join us!" name="regbut">
 </form>
-
+    </div>
 </div>
 
 

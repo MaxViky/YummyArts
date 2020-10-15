@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import PasswordInput
+from .models import *
 
 
 class loginForm(forms.Form):
@@ -21,3 +22,9 @@ class regForms(forms.ModelForm):
         if cd['password1'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
+
+
+class ImageForm(forms.ModelForm):
+    class Meta:
+        model = Images
+        fields = ('name', 'post', 'tag')

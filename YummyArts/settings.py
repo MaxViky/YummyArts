@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'YummyArts.wsgi.application'
 DATABASES = {
     'default': {
      'ENGINE': 'django.db.backends.postgresql',
-     'NAME': 'YummyArtsBase',
+     'NAME': 'MyBase',
      'USER': 'Max',
      'PASSWORD': '1234',
      'HOST': 'localhost',

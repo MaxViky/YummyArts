@@ -2,8 +2,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.context_processors import auth
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from .forms import loginForm, regForms
-
+from .forms import *
 
 def LogIn(request, ):
     invalid = 'Invalid login or password'
@@ -45,4 +44,13 @@ def register(request):
     return render(request, 'RegistrationForm.html', {'reg_form': user_form})
 
 
-
+def profile(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            img_obj = form.instance
+            return render(request, 'Profile.html', {'form': form, 'img_obj': img_obj})
+    else:
+        form = ImageForm()
+        return render(request, 'Profile.html', {'form': form})

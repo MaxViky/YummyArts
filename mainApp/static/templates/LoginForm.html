@@ -1,22 +1,24 @@
 {% extends 'default.html' %}
-{% block title %} Регистрация {% endblock %}
+{% block title %} Авторизация {% endblock %}
 
 {% block content %}
 <style>
    .blue {background: #1F75FE; }
    .index{color: White;}
   </style>
-<div class="container blue" style="margin-top: 80px;  font-family=Verdana;">
-    <H2 style="margin-left: 40px;" class="text-center"><font color="White">Authorization</font></H2>
-    <form class="index" action="" method="POST" style="margin-left: 400px;  margin-top: 15px;">
+<div class="container" style="font-family=Verdana; margin-top:50px;">
+    <H2 class="text-center"><font color="#1F75FE">Authorization</font></H2>
+    <div class="container" align="center">
+    <form action="" method="POST" style="color:#1F75FE">
         {% csrf_token %}
     <table class="">
         {{ log_form.as_table }}
     </table>
-    <font style=" margin-bottom:20px;"> {{ invalid }}</font>
+    <font style=" margin-bottom:10px;"> {{ invalid }}</font>
         <p></p>
-    <a href="/authorization/join" style="margin-left: 80px; margin-top:5px;"  type="submit" class="btn purple btn-md index" name="Reg">Registration</a>
-    <input  style="margin-left: 10px; margin-top:5px;"  type="submit" class="btn purple btn-md index" value="Sign in" name="LogIn">
-</form>
+        <a href="/authorization/join" style="margin-left: 80px; margin-top:2px;" type="submit" class="btn blue btn-md index" name="Reg">Registration</a>
+        <input type="submit" style="margin-top:2px;" class="btn blue btn-md index" value="Sign in" name="LogIn"/>
+        </form>
+    </div>
 </div>
 {% endblock %}

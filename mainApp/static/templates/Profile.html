@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+{% block title %} {{ user }} {% endblock %}
+<style>
+   .blue {background: #1F75FE; }
+   .index{color: White;}
+   bgcolor="#F8F8FF"
+  </style>
+{% block content %}
+<div class="blue" align="center"  style="margin-top:20px; margin-left: 150px">
+    <h5 class="text-left"><font color="#1F75FE">Nickname: {{ user }}</font></h5>
+    <div class="container" align="left">
+     <form method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit">Upload</button>
+     </form>
+
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
+    </div>
+</div>
+{% endblock %}

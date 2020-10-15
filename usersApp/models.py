@@ -18,7 +18,7 @@ class Images(models.Model):
     name = models.CharField(verbose_name='Image', max_length=50, default='Unknown')
     post = models.ImageField('picture', null=True, upload_to='userImage/')
     view = models.IntegerField()
-    tag = models.ForeignKey(Tags, verbose_name='tag', on_delete=models.DO_NOTHING)
+    tag = models.ForeignKey(Tags, verbose_name='Tag', on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.name
