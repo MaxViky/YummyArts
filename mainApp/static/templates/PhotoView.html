@@ -8,25 +8,15 @@
 </style>
 {% block content %}
 <div class="container blue" style="background-color: #1F75FE; margin-top: 100px;">
-    <div class="row">
-        {% for pic in pic %}
-        <div class="col-md-4 product-men">
-            <div class="product-shoe-info EditContent text-center mt-lg-4">
-                <div class="men-thumb-item">
-                    <a name="post">
-                        <img src="{{ pic.post.url }}" class="img-fluid wdth bgcolor" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
+    <a name="post">
+        <img src="{{ pic.post.url }}" class="img-fluid wdth bgcolor" alt="">
+    </a>
     <div class="item-info-product">
         <ul>
             <li style="color: white;">Название: {{ pic.name }}</li>
             <li style="color: white;">Просмотры: {{ pic.view }} <a style="color: black;" id="eye"> </a></li>
             <li style="color: white;">Тэг: {{ pic.tag.name }}</li>
         </ul>
-    </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

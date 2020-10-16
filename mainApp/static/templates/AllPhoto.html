@@ -9,7 +9,7 @@
   </style>
 <div class="container" style="background-color: #1F75FE; margin-top: 100px;">
    <div class="row">
-        {% for pic in pic_list %}
+       {% for pic in pic_list %}
             <div class="col-md-4 product-men">
                 <div class="product-shoe-info EditContent text-center mt-lg-4">
                 <div class="men-thumb-item">
@@ -22,13 +22,11 @@
                         <a href="/{{ pic.id }}/" style="color: white;">{{ pic.name }}</a>
                         <a id="eye"></a>
                         <a style="color: white;">{{ pic.view }}</a>
-
                     </div>
                 </div>
-
                 </div>
             </div>
-        {% endfor %}
+       {% endfor %}
     </div>
 </div>
 {% endblock %}
