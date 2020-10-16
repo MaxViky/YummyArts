@@ -13,8 +13,8 @@ class all_photo(View):
 class image_views(View):
     def get(self, request, pk):
         image = Images.objects.get(id=pk)
-        # image.view += 1
-        # Images.save(image)
+        image.view += 1
+        Images.save(image)
         return render(request, 'PhotoView.html', {'pic': image})
 
 
