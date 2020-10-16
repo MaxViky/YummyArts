@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Tags(models.Model):
     name = models.CharField(verbose_name='Tag', max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -21,7 +21,7 @@ class Images(models.Model):
     tag = models.ForeignKey(Tags, verbose_name='Tag', on_delete=models.CASCADE)
     user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:

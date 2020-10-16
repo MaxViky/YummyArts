@@ -1,10 +1,12 @@
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.context_processors import auth
 from django.shortcuts import render, redirect
+from django.views.generic.base import View
 from django.contrib import auth
 from .forms import *
 
-def LogIn(request, ):
+
+def LogIn(request):
     invalid = 'Invalid login or password'
     if request.method == 'POST':
         form = loginForm(request.POST)

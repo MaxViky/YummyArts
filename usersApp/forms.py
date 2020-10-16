@@ -27,4 +27,4 @@ class regForms(forms.ModelForm):
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Images
-        fields = ('name', 'post', 'tag')
+        fields = ['name', 'post', 'tag']
