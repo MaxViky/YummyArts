@@ -7,19 +7,27 @@
    .wdth {height: 150px; width: 150 px;}
 
   </style>
+
 <div class="container" style="background-color: #1F75FE; margin-top: 100px;">
+    <form action="" method="GET">
+        {% csrf_token %}
+        <table style="color: white;">
+            {{ tagForm }}
+        </table>
+        <input type="submit" value="Поиск" name="search">
+    </form>
    <div class="row">
         {% for pic in pic_list %}
             <div class="col-md-4 product-men">
                 <div class="product-shoe-info EditContent text-center mt-lg-4">
                 <div class="men-thumb-item">
-                    <a name="post" href="#">
+                    <a name="post" >
                         <img src="{{ pic.post.url }}" class="img-fluid wdth" alt="">
                     </a>
                 </div>
                 <div class="item-info-product">
                     <div>
-                        <a style="color: white;">{{ pic.name }}</a>
+                        <a href="/{{ pic.id }}/" style="color: white;">{{ pic.name }}</a>
                         <a id="eye"></a>
                         <a style="color: white;">{{ pic.view }}</a>
 

@@ -3,20 +3,22 @@
 
 <style>
    .blue { background-color: #1F75FE; }
-   .wdth {height: 150px; width: 150 px;}
-   .bgcolor { background-color: #F8F8FF; }
+   .wdth {height: 150px; width: 150px;}
 </style>
 {% block content %}
 <div class="container blue" style="background-color: #1F75FE; margin-top: 100px;">
-    <a name="post">
-        <img src="{{ pic.post.url }}" class="img-fluid wdth bgcolor" alt="">
-    </a>
+    <div class="row">
+    <div class="product-shoe-info ">
+        <img align="left" src="{{ pic.post.url }}" style="" class="img-fluid blue" alt="">
+    </div>
     <div class="item-info-product">
         <ul>
             <li style="color: white;">Название: {{ pic.name }}</li>
             <li style="color: white;">Просмотры: {{ pic.view }} <a style="color: black;" id="eye"> </a></li>
             <li style="color: white;">Тэг: {{ pic.tag.name }}</li>
+            <li style="color: white;">Автор: {{ pic.user }}</li>
         </ul>
+    </div>
     </div>
 </div>
 {% endblock %}
